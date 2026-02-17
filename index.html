@@ -554,7 +554,45 @@
         /* --- RESPONSIVE (mobile-first) --- */
         @media (max-width: 767px) {
             .nav-links { display: none; }
-            .split-layout { flex-direction: column; gap: 32px; }
+            .split-layout {
+                flex-direction: column;
+                gap: 28px;
+                align-items: stretch;
+            }
+            .split-content {
+                order: 1;
+                padding: 0 4px;
+            }
+            .split-content .nus-tag { margin-bottom: 12px; }
+            .split-content h2 { font-size: 24px; line-height: 1.25; margin-bottom: 12px; }
+            .split-content p { font-size: 16px !important; margin-bottom: 20px !important; line-height: 1.5; }
+            .split-content ul { gap: 12px; }
+            .split-content li { font-size: 15px; }
+            .split-visual {
+                order: 2;
+                min-height: 0;
+            }
+            .visual-card-stack {
+                height: auto;
+                min-height: 220px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                padding: 0 0 8px;
+            }
+            .startup-card-mock {
+                position: relative;
+                top: auto;
+                left: auto;
+                transform: none;
+                width: 100%;
+                max-width: 100%;
+                padding: 20px;
+                margin: 0;
+            }
+            .startup-card-mock p { font-size: 15px; margin-bottom: 16px; }
+            .startup-card-mock [style*="font-size: 18px"] { font-size: 16px !important; }
+            .startup-card-mock [style*="font-size: 14px"] { font-size: 13px !important; }
             .nus-section, .portfolio-section { padding: 48px 0; }
             .bento-grid { grid-template-columns: 1fr; grid-template-rows: auto; gap: 16px; }
             .bento-item { padding: 24px; }
