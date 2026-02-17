@@ -2,9 +2,10 @@
 <html lang="uk">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <meta name="theme-color" content="#0095f6">
     <title>PervozHub — Цифрове майбутнє Первозванівського ліцею</title>
-    <meta name="description" content="Офіційна соціальна мережа Первозванівського ліцею. Стартапи, портфоліо, розклад та спільнота.">
+    <meta name="description" content="Офіційна соціальна мережа Первозванівського ліцею. Стартапи, портфоліо, відзнаки, розклад та спільнота.">
     
     <!-- Google Fonts: DM Sans -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -50,23 +51,32 @@
         ul { list-style: none; }
         img { max-width: 100%; display: block; }
 
+        /* --- APP URL: один посилання на основний додаток --- */
+        
         /* --- UTILITIES --- */
         .container {
             max-width: 1200px;
             margin: 0 auto;
-            padding: 0 20px;
+            padding: 0 16px;
+        }
+        
+        @media (min-width: 768px) {
+            .container { padding: 0 24px; }
         }
         
         .btn {
             display: inline-flex;
             align-items: center;
             justify-content: center;
+            min-height: 44px;
             padding: 12px 24px;
             border-radius: var(--radius-md);
             font-weight: 600;
+            font-size: 16px;
             transition: all 0.3s ease;
             cursor: pointer;
             gap: 8px;
+            -webkit-tap-highlight-color: transparent;
         }
 
         .btn-primary {
@@ -115,33 +125,41 @@
             position: fixed;
             top: 0;
             left: 0;
+            right: 0;
             width: 100%;
-            background: rgba(250, 250, 250, 0.85);
+            background: rgba(250, 250, 250, 0.9);
             backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
             z-index: 1000;
-            border-bottom: 1px solid rgba(0,0,0,0.05);
-            padding: 16px 0;
+            border-bottom: 1px solid rgba(0,0,0,0.06);
+            padding: 12px 0;
+            padding-top: max(12px, env(safe-area-inset-top));
         }
 
         .nav-wrapper {
             display: flex;
             justify-content: space-between;
             align-items: center;
+            gap: 12px;
         }
 
         .logo {
-            font-size: 20px;
+            font-size: 18px;
             font-weight: 800;
             display: flex;
             align-items: center;
-            gap: 8px;
+            gap: 6px;
+        }
+        
+        @media (min-width: 768px) {
+            .logo { font-size: 20px; }
         }
         
         .logo span { color: var(--accent); }
 
         .nav-links {
             display: flex;
-            gap: 32px;
+            gap: 24px;
         }
 
         .nav-links a {
@@ -149,37 +167,58 @@
             font-size: 15px;
             color: var(--text-secondary);
             transition: color 0.2s;
+            padding: 8px 0;
         }
 
         .nav-links a:hover { color: var(--accent); }
 
-        /* --- HERO SECTION --- */
+        /* --- HERO SECTION (mobile-first) --- */
         .hero {
-            padding: 140px 0 80px;
+            padding: 100px 0 48px;
             text-align: center;
             overflow: hidden;
         }
+        
+        @media (min-width: 768px) {
+            .hero { padding: 140px 0 80px; }
+        }
 
         .hero h1 {
-            font-size: clamp(40px, 5vw, 64px);
+            font-size: clamp(28px, 8vw, 64px);
             font-weight: 800;
-            line-height: 1.1;
-            margin-bottom: 24px;
-            letter-spacing: -1px;
+            line-height: 1.15;
+            margin-bottom: 20px;
+            letter-spacing: -0.5px;
+        }
+        
+        @media (min-width: 768px) {
+            .hero h1 { margin-bottom: 24px; }
         }
 
         .hero p {
-            font-size: 18px;
+            font-size: 16px;
             color: var(--text-secondary);
             max-width: 600px;
-            margin: 0 auto 40px;
+            margin: 0 auto 32px;
+            line-height: 1.5;
+            padding: 0 8px;
+        }
+        
+        @media (min-width: 768px) {
+            .hero p { font-size: 18px; margin-bottom: 40px; }
         }
 
         .hero-buttons {
             display: flex;
-            gap: 16px;
+            flex-wrap: wrap;
+            gap: 12px;
             justify-content: center;
-            margin-bottom: 60px;
+            margin-bottom: 40px;
+            padding: 0 8px;
+        }
+        
+        @media (min-width: 768px) {
+            .hero-buttons { gap: 16px; margin-bottom: 60px; }
         }
 
         /* 3D Phone Mockup Animation */
@@ -269,40 +308,66 @@
             50% { transform: translateY(15px); }
         }
 
-        /* --- FEATURES SECTION --- */
+        /* --- FEATURES SECTION (mobile-first) --- */
         .features {
-            padding: 100px 0;
+            padding: 48px 0;
             background: white;
+        }
+        
+        @media (min-width: 768px) {
+            .features { padding: 100px 0; }
         }
 
         .section-header {
             text-align: center;
-            margin-bottom: 60px;
+            margin-bottom: 32px;
+            padding: 0 8px;
+        }
+        
+        @media (min-width: 768px) {
+            .section-header { margin-bottom: 60px; }
         }
 
         .section-header h2 {
-            font-size: 36px;
-            margin-bottom: 16px;
+            font-size: 26px;
+            margin-bottom: 12px;
+        }
+        
+        @media (min-width: 768px) {
+            .section-header h2 { font-size: 36px; margin-bottom: 16px; }
         }
 
         .section-header p {
             color: var(--text-secondary);
             max-width: 500px;
             margin: 0 auto;
+            font-size: 15px;
         }
 
         .feature-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
+            grid-template-columns: 1fr;
+            gap: 16px;
+        }
+        
+        @media (min-width: 640px) {
+            .feature-grid { grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 24px; }
+        }
+        
+        @media (min-width: 768px) {
+            .feature-grid { gap: 30px; }
         }
 
         .feature-card {
-            padding: 32px;
+            padding: 24px;
             background: #fafafa;
             border-radius: var(--radius-xl);
             border: 1px solid transparent;
             transition: all 0.3s ease;
+        }
+        
+        @media (min-width: 768px) {
+            .feature-card { padding: 32px; }
         }
 
         .feature-card:hover {
@@ -486,17 +551,29 @@
             display: block;
         }
 
-        /* --- RESPONSIVE --- */
-        @media (max-width: 768px) {
+        /* --- RESPONSIVE (mobile-first) --- */
+        @media (max-width: 767px) {
             .nav-links { display: none; }
-            .hero h1 { font-size: 36px; }
-            .split-layout { flex-direction: column; }
-            .bento-grid { grid-template-columns: 1fr; grid-template-rows: auto; }
+            .split-layout { flex-direction: column; gap: 32px; }
+            .nus-section, .portfolio-section { padding: 48px 0; }
+            .bento-grid { grid-template-columns: 1fr; grid-template-rows: auto; gap: 16px; }
+            .bento-item { padding: 24px; }
             .bento-large, .bento-tall { grid-column: span 1; grid-row: span 1; }
             .float-card { display: none; }
-            .mockup-container { height: auto; margin-bottom: 40px; }
-            .phone-mockup { transform: none; width: 100%; max-width: 320px; margin: 0 auto; }
+            .mockup-container { height: auto; margin-bottom: 24px; }
+            .phone-mockup { transform: none; width: 100%; max-width: 280px; height: 520px; margin: 0 auto; animation: none; }
             .phone-mockup:hover { transform: none; }
+            .cta-section { padding: 48px 0; }
+            .cta-card { padding: 40px 16px; border-radius: 24px; }
+            .cta-card h2 { font-size: 28px; }
+            .cta-card p { font-size: 16px; margin-bottom: 28px; }
+            .cta-btn { min-height: 48px; padding: 14px 28px; font-size: 16px; }
+            footer { padding: 40px 0; padding-bottom: max(40px, env(safe-area-inset-bottom)); }
+            .footer-content { flex-direction: column; gap: 32px; text-align: center; }
+        }
+        
+        @media (min-width: 768px) {
+            .nus-section, .portfolio-section { padding: 100px 0; }
         }
 
         /* --- ANIMATIONS ON SCROLL --- */
@@ -525,7 +602,7 @@
                 <a href="#schedule">Розклад</a>
             </nav>
             <div style="display: flex; gap: 10px;">
-                 <a href="https://pervohub.onrender.com/" class="btn btn-primary">Увійти</a>
+                 <a href="https://pervohub.onrender.com/" class="btn btn-primary js-app-link">Увійти в додаток</a>
             </div>
         </div>
     </header>
@@ -538,7 +615,7 @@
             <p>PervozHub — це не просто сайт. Це екосистема для учнів, вчителів та батьків Первозванівського ліцею. Твори, навчайся, впливай.</p>
             
             <div class="hero-buttons">
-                <a href="https://pervohub.onrender.com/" class="btn btn-primary">
+                <a href="https://pervohub.onrender.com/" class="btn btn-primary js-app-link">
                     <i data-lucide="rocket"></i> Відкрити PervozHub
                 </a>
                 <a href="#features" class="btn btn-outline">
@@ -638,7 +715,7 @@
 
                 <div class="feature-card reveal">
                     <div class="icon-box"><i data-lucide="search"></i></div>
-                    <h3>Бюро Знахідok</h3>
+                    <h3>Бюро знахідок</h3>
                     <p>Загубив піджак чи знайшов чийсь телефон? Опублікуй оголошення за секунду і допоможи другу.</p>
                 </div>
 
@@ -760,7 +837,7 @@
             <div class="cta-card reveal">
                 <h2>Ти з нами?</h2>
                 <p>Приєднуйся до цифрової спільноти Первозванівського ліцею. Твій профіль вже чекає на тебе.</p>
-                <a href="https://pervohub.onrender.com/" class="cta-btn">
+                <a href="https://pervohub.onrender.com/" class="cta-btn js-app-link">
                     Увійти в PervozHub
                 </a>
             </div>
@@ -796,6 +873,12 @@
 
     <!-- Scripts -->
     <script>
+        // Єдине посилання на основний додаток — змінюй тільки тут
+        window.PERVOZHUB_APP_URL = 'https://pervohub.onrender.com/';
+        document.querySelectorAll('.js-app-link').forEach(function (a) {
+            a.setAttribute('href', window.PERVOZHUB_APP_URL);
+        });
+
         // Initialize Lucide Icons
         lucide.createIcons();
 
@@ -816,10 +899,10 @@
             observer.observe(el);
         });
 
-        // Phone float effect on mouse move (Parallax light)
+        // Phone float effect on mouse move (Parallax) — тільки для десктопу
         const phone = document.querySelector('.phone-mockup');
         const container = document.querySelector('.mockup-container');
-
+        if (container && phone && !('ontouchstart' in window)) {
         container.addEventListener('mousemove', (e) => {
             const xAxis = (window.innerWidth / 2 - e.pageX) / 25;
             const yAxis = (window.innerHeight / 2 - e.pageY) / 25;
@@ -834,6 +917,7 @@
             phone.style.transition = 'transform 0.5s ease';
             phone.style.transform = `rotateY(-15deg) rotateX(10deg)`;
         });
+        }
     </script>
 </body>
 </html>
