@@ -941,6 +941,12 @@
             a.setAttribute('href', window.PERVOZHUB_APP_URL);
         });
 
+        // Посилання на APK для Android (відносний шлях: PervozHub 1.0/android/app-release.apk)
+        window.PERVOZHUB_APK_URL = 'PervozHub%201.0/android/app-release.apk';
+        document.querySelectorAll('.js-android-download').forEach(function (a) {
+            a.setAttribute('href', window.PERVOZHUB_APK_URL);
+        });
+
         // Initialize Lucide Icons
         lucide.createIcons();
 
